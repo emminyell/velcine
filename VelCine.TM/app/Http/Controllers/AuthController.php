@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class AuthController extends Controller
 {
 
@@ -86,4 +87,13 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+    public function logout(){
+            Auth::logout();
+
+            return response()->json([
+              "message"=>"logged out"
+            ]);
     }
+    }
+
